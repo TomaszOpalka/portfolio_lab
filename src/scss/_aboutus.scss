@@ -1,0 +1,36 @@
+.aboutus{
+    display: flex;
+    height: 935px;
+
+
+
+    &-text{
+        width: 50%;
+        position: relative;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+
+      
+       
+       p{
+        text-align: center;
+        line-height: 1.75;
+        font-size: 30px;
+       }
+
+    }
+    &-img{
+        width: 50%;
+        overflow: hidden;
+    }
+}
+.aboutus-signature{
+    position: relative;
+    left: 200px;
+    top: 30px;
+}
+.aboutus-decoration{
+    margin: 20px;
+}

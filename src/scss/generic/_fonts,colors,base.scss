@@ -1,0 +1,64 @@
+
+$color-background: #F0F1F1;
+$color-primary: #5E5322;
+$color-accent: #FAD648;
+$color-text: #737373;
+$color-dark: #3C3C3C;
+
+$font-open-sans: 'Open Sans', sans-serif;
+$font-merriweather: 'Merriweather', serif;
+
+$font-size-h1:  38px;
+$font-size-h2: 18px;
+$font-size-h3: 1.5rem;
+$font-size-p: 16px;
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+  font-family: $font-open-sans;
+  background-color: $color-background;
+  color: $color-dark;
+
+}
+
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+p {
+  font-size: $font-size-p;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+.heading {
+  font-family: $font-merriweather;
+  color: $color-primary;
+}
+
+.accent-text {
+  color: $color-accent;
+}
+
+.dark-text {
+  color: $color-dark;
+}

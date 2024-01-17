@@ -1,0 +1,31 @@
+.steps-white{
+    background-color: #fff;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px  ;
+    color: $color-dark;
+}
+.steps-grey{
+    height: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F1F1;
+    gap: 120px;
+}
+.steps-hr{
+    width: 55px;
+}
+.steps-4{
+    text-align: center;
+    width: auto;
+    width: 160px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}

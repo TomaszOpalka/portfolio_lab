@@ -1,0 +1,26 @@
+.statistic-container{
+    display: flex;
+    justify-content: space-around;
+    background: url('../assets/3\ Columns\ Background.png');
+    background-size: cover;
+    padding:40px;
+}
+.statistic-column{ 
+    height: 252px;
+    width: 334px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+   h1{
+    font-size: 91px;
+    margin-bottom: 20px;
+   }
+   h2{
+    margin-bottom: 20px;
+   }
+
+}
