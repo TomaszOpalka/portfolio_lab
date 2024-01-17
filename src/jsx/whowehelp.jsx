@@ -23,21 +23,21 @@ function WhoWeHelp(){
                     <li className="wwh-li">
                         <h1> Fundacja “Dbam o Zdrowie”</h1>
                         <p>Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</p>
-                        <h3 className="wwh-li-right">ubrania, jedzenie, sprzęt AGD, meble, zabawki</h3>
+                        <p className="wwh-li-right">ubrania, jedzenie, sprzęt AGD, meble, zabawki</p>
                         <hr className="wwh-hr"/>
                     </li>
                     
                     <li className="wwh-li">
                         <h1> Fundacja “Dla dzieci”</h1>
                         <p>Cel i misja: Pomoc dzieciom z ubogich rodzin.</p>
-                        <h3 className="wwh-li-right">ubrania, meble, zabawki</h3>
+                        <p className="wwh-li-right">ubrania, meble, zabawki</p>
                         <hr className="wwh-hr"/>
                     </li>
 
                     <li className="wwh-li">
                         <h1> Fundacja “Bez domu”</h1>
                         <p>Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.</p>
-                        <h3 className="wwh-li-right">ubrania, jedzenie, ciepłe koce</h3>
+                        <p className="wwh-li-right">ubrania, jedzenie, ciepłe koce</p>
                         <hr className="wwh-hr"/>
                     </li>
                 </ul>

@@ -7,6 +7,7 @@ import Statistic from './jsx/statistic.jsx'
 import Steps from './jsx/steps.jsx'
 import AboutUs from './jsx/aboutus.jsx'
 import WhoWeHelp from './jsx/whowehelp.jsx'
+import Contact from './jsx/contact.jsx'
 
 function App() {
  
@@ -18,6 +19,7 @@ function App() {
      <Steps/>
      <AboutUs/>
      <WhoWeHelp/>
+     <Contact/>
     </>
   )
 }
