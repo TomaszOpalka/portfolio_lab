@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+import { Link as  ScrollLink} from 'react-scroll'
 
 function Header(){
 
@@ -6,16 +8,16 @@ function Header(){
        <>
         <div className="header">
             <div className="header-topgroup">
-                <button className="btn-header login">Zaloguj</button>
-                <button className="btn-header register">Załóż konto</button>
+                <Link to="/login"><button className="btn-header login">Zaloguj</button></Link>
+                <Link to="/createAcc"><button className="btn-header register">Załóż konto</button></Link>
             </div>
             <div className="header-nav">
             <ul className="header-ul">
-                <li>Start </li>
-                <li>O co chodzi?</li>
-                <li>O nas </li>
-                <li>Fundacja i organizacje </li>
-                <li>Kontakt </li>
+                <Link to="/"><li className="header-li">Start</li></Link>
+                <ScrollLink className="header-li" to="steps">O co chodzi?</ScrollLink>
+                <ScrollLink className="header-li" to="aboutus"> O nas </ScrollLink>
+                <ScrollLink className="header-li" to="whowehelp"> Fundacja i organizacje </ScrollLink>
+                <ScrollLink className="header-li" to='contact'> Kontakt </ScrollLink>
             </ul>
             </div>
         </div>

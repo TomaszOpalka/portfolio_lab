@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Steps(){
     return(
         <div>
-            <div className="steps-white">
+            <div className="steps-white" id="steps">
                 <h1>Wystarczą 4 proste kroki</h1>
                 <img className="steps-decoration" src="src\assets\Decoration.svg"></img>
             </div>
@@ -37,7 +38,7 @@ function Steps(){
                 </div>
             </div>
             <div className="steps-white">
-                <button className="steps-btn hero-btn">ODDAJ<br></br>RZECZY</button>
+            <Link to="/login"><button className="steps-btn hero-btn">ODDAJ<br></br>RZECZY</button></Link>
             </div>
         </div>
     )

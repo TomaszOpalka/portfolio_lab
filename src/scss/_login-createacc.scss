@@ -1,0 +1,43 @@
+.login-createacc{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+}
+.grey-login{
+    background-color: $color-background;
+    display: flex;
+    flex-direction: column;
+    width: 385px;
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+    color: black;
+    
+    
+
+        label{
+            margin: 30px;
+       
+        input{
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+            width: calc(100% - 20px);
+            border: none;
+            border-bottom: 1px solid $color-dark;
+            background-color: inherit;
+            
+            &:hover{
+                border: none;
+                border-bottom: 1.75px solid black;
+            }  
+        }
+ }
+}
+.login-createacc-decoration{
+    margin: 30px;
+}

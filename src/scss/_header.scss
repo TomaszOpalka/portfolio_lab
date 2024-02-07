@@ -5,6 +5,7 @@
     margin-top: 37px;
     left: 50%;
     background: #FFF;
+    z-index: 1;
 
     &-topgroup{
         top: 46px;
@@ -27,14 +28,15 @@
         gap: 24px;
     
 
-        li{
+        .header-li{
         padding: 10px;
         margin-left: auto;
         border: 0.75px solid transparent;
+        text-decoration: none;
+        color: $color-dark;
         
         &:hover{
             border-color: $color-dark;
-        
         }
         }
     }

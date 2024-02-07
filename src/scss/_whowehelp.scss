@@ -44,3 +44,25 @@
         font-style: italic;
     } 
 }    
+.pagination-wwh{
+    display: flex;
+    justify-content: center;
+   
+    
+    .wwh-btn{
+        background-color: #fff;
+        border-radius: none;
+        border: 1px solid transparent;
+        height: 50px;
+        width: 38px;
+        font-size: 15px;
+        margin: 10px;
+        
+        &.active{
+            border: 1px solid black;
+        }
+        &:hover {
+            border: 1px solid black;
+          }
+    }
+}

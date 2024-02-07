@@ -3,7 +3,7 @@ import React from "react";
 function Statistic(){
     return(
         <>
-        <div className="statistic-container">
+        <div className="statistic-container" id="statistic">
             <div className="statistic-column">
                 <h1 className="statistic-number">10</h1>
                 <h2>ODDANYCH WORKÓW</h2>

@@ -1,27 +1,31 @@
-import { useState } from 'react'
-import './scss/App.scss'
-import './jsx/header.jsx'
-import Header from './jsx/header.jsx'
-import Hero from './jsx/hero.jsx'
-import Statistic from './jsx/statistic.jsx'
-import Steps from './jsx/steps.jsx'
-import AboutUs from './jsx/aboutus.jsx'
-import WhoWeHelp from './jsx/whowehelp.jsx'
-import Contact from './jsx/contact.jsx'
+import {
+  HashRouter,
+  Route,
+  Routes,
+  Link,
+  NavLink,
+  Outlet,
+  BrowserRouter
+} from 'react-router-dom';
+import React, { useRef } from 'react';
+import './scss/App.scss';
+import Login from './jsx/Login.jsx';
+import CreateAcc from './jsx/CreateAcc.jsx';
+import Layout from './jsx/Layout.jsx';
+import { supabase } from './jsx/Client.jsx';
 
 function App() {
- 
+  
+
   return (
-    <>
-     <Header/>
-     <Hero/>
-     <Statistic/> 
-     <Steps/>
-     <AboutUs/>
-     <WhoWeHelp/>
-     <Contact/>
-    </>
-  )
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/createAcc" element={<CreateAcc/>}></Route>
+        </Routes> 
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

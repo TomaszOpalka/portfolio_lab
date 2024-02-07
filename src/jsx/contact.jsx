@@ -2,7 +2,7 @@ import React from "react";
 
 function Contact(){
     return(
-        <div className="contact-container">
+        <div className="contact-container" id='contact'>
             <div className="contact-img">
                 <img className='contact-background' src="src/assets/Background-Contact-Form.jpg"></img>
             </div>

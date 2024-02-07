@@ -1,11 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 
 function Hero(){
 
     return(
        <>
-        <div className="home">
+        <div className="home" id="hero"> 
             <div className="hero-img">
                 <img className="home-img" src='src/assets/Home-Hero-Image.jpg' ></img>
             </div>
@@ -16,8 +18,8 @@ function Hero(){
                 </div>
                     <img className="hero-decoration" src="src\assets\Decoration.svg"></img>
                 <div className="hero-btns">
-                    <button className="hero-btn">ODDAJ<br></br>RZECZY</button>
-                    <button className="hero-btn">ZORGANIZUJ ZBIÓRKĘ</button>
+                <Link to="/login"><button className="hero-btn">ODDAJ<br></br>RZECZY</button></Link>
+                <Link to="/login"><button className="hero-btn">ZORGANIZUJ ZBIÓRKĘ</button></Link>
                 </div>
             </div>
         </div>

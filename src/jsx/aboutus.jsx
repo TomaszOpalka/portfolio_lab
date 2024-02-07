@@ -2,7 +2,7 @@ import React from "react";
 
 function AboutUs(){
     return(
-        <div className="aboutus">
+        <div className="aboutus" id="aboutus">
             <div className="aboutus-text">
                 <h1>O nas</h1>
                 <img className="aboutus-decoration" src="src\assets\Decoration.svg"></img>
