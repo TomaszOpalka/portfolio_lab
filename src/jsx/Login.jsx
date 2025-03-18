@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header.jsx';
 import { supabase } from './Client.jsx';
-
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -25,6 +25,12 @@ function Login() {
       password: formData.password,
     });
     console.log('Dane formularza:', formData);
+    if (error) {
+      alert("Błąd logowania: " + error.message); // Obsługa błędów logowania
+    } else {
+      // Użytkownik jest zalogowany, w Header odświeżymy dane
+      console.log('Zalogowano:', data.user);
+    }
   }
 
   return (
@@ -56,7 +62,8 @@ function Login() {
                 required
               />
             </label>
-            <button type="submit">Zaloguj się</button>
+            <button type="submit" className='btn-creatacc'>Zaloguj się</button>
+            <Link to="/createAcc"><button className="btn-login">Załóż konto</button></Link>
           </form>
         </div>
         

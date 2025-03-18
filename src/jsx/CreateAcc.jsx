@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header.jsx';
 import { supabase } from './Client.jsx';
+import { Link } from 'react-router-dom';
 
 function CreateAcc() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ function CreateAcc() {
     password: '',
     confirmPassword: '',
   });
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,6 +21,11 @@ function CreateAcc() {
 
   async function handleSubmit(e) {
     e.preventDefault();
+
+    if (formData.password.length < 6) {
+      setErrorMessage('Hasło musi mieć co najmniej 6 znaków');
+      return;
+    }
 
     try{
     const { data, error } = await supabase.auth.signUp({
@@ -59,6 +66,7 @@ function CreateAcc() {
                 onChange={handleChange}
                 required
               />
+               {errorMessage && <h6 className="error-message">{errorMessage}</h6>}
             </label>
 
             <label>
@@ -71,7 +79,8 @@ function CreateAcc() {
                 required
               />
             </label>
-            <button type="submit">Załóż konto</button>
+            <button className='btn-creatacc' type="submit" >Załóż konto</button>
+            <Link to="/login"><button className="btn-login">Zaloguj</button></Link>
           </form>
         </div>
             
