@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from './Header.jsx';
 import { supabase } from './Client.jsx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const [errorMessage, setErrorMessage] = useState(''); // Dodano przechowywanie błędów
+  const navigate = useNavigate(); // Hook do nawigacji
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -20,16 +22,21 @@ function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email: formData.email,
-      password: formData.password,
-    });
-    console.log('Dane formularza:', formData);
-    if (error) {
-      alert("Błąd logowania: " + error.message); // Obsługa błędów logowania
-    } else {
-      // Użytkownik jest zalogowany, w Header odświeżymy dane
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (error) {
+        setErrorMessage("Błąd logowania: " + error.message); // Wyświetl komunikat błędu
+        return;
+      }
+
       console.log('Zalogowano:', data.user);
+      navigate('/oddaj-rzeczy'); // Przekierowanie po poprawnym logowaniu
+    } catch (err) {
+      setErrorMessage("Wystąpił błąd: " + err.message); // Obsługa błędów
     }
   }
 
@@ -38,7 +45,7 @@ function Login() {
       <Header />
       <div id="login" className="login-createacc">
         <h1>Formularz logowania</h1>
-        <img className="login-createacc-decoration" src="src\assets\Decoration.svg" alt="Decoration" />
+        <img className="login-createacc-decoration" src="src/assets/Decoration.svg" alt="Decoration" />
         <div className="grey-login">
           <form onSubmit={handleSubmit}>
             <label>
@@ -62,11 +69,13 @@ function Login() {
                 required
               />
             </label>
+            {errorMessage && <p className="error-message">{errorMessage}</p>} {/* Wyświetlenie błędu */}
             <button type="submit" className='btn-creatacc'>Zaloguj się</button>
-            <Link to="/createAcc"><button className="btn-login">Załóż konto</button></Link>
+            <Link to="/createAcc">
+              <button type="button" className="btn-login">Załóż konto</button>
+            </Link>
           </form>
         </div>
-        
       </div>
     </>
   );

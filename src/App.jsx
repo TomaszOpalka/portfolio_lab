@@ -1,18 +1,16 @@
 import {
-  HashRouter,
   Route,
   Routes,
-  Link,
-  NavLink,
-  Outlet,
   BrowserRouter
 } from 'react-router-dom';
-import React, { useRef } from 'react';
+import 'react';
 import './scss/App.scss';
 import Login from './jsx/Login.jsx';
 import CreateAcc from './jsx/CreateAcc.jsx';
 import Layout from './jsx/Layout.jsx';
-import { supabase } from './jsx/Client.jsx';
+import './jsx/Client.jsx';
+import OddajRzeczy from './jsx/afterlogin/OddajRzeczy.jsx';
+
 
 function App() {
   
@@ -23,6 +21,7 @@ function App() {
           <Route path="/" element={<Layout/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/createAcc" element={<CreateAcc/>}></Route>
+          <Route path="/oddaj-rzeczy" element={<OddajRzeczy />} />
         </Routes> 
     </BrowserRouter>
   );

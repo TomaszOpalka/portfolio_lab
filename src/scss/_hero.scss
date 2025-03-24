@@ -1,3 +1,4 @@
+@import '../scss/generic/_fonts,colors,base.scss';
 
 .home{
     background: #FFFFFF;
@@ -10,7 +11,7 @@
     width: 885px;
     height: 963px;
     position: relative;
-    
+    background: transparent url('img/Header-Form-Background.png') 0% 0% no-repeat padding-box;
 }
     
 .home-img{
@@ -24,7 +25,7 @@
     position: absolute;
     background-color: #FFF;
     top: 342px;
-    left: 951px;
+    left: 53%;
     width: 674px;
     height: 350px;
     display: flex;

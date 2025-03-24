@@ -3,7 +3,7 @@
     height: 95px;
     position: absolute;
     margin-top: 37px;
-    left: 50%;
+    left: 55%;
     background: #FFF;
     z-index: 1;
 
@@ -54,4 +54,9 @@ border: 0.75px solid transparent;
         border-color: $color-accent ;
         opacity: 1;
     }
+}
+.welcome-user{
+    position: relative;
+    top: 33px;
+    right: 200px;
 }
