@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Header from './Header.jsx';
+import Header from '/src/jsx/Header.jsx';
 import { supabase } from './Client.jsx';
 import { Link, useNavigate } from 'react-router-dom';
+
 
 function Login() {
   const [formData, setFormData] = useState({
