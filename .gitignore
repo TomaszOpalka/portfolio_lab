@@ -25,3 +25,5 @@ dist-ssr
 
 .env
 
+#wymuszenie poprawnego nazewnictwa w repozytorium
+git config core.ignorecase false
