@@ -1,6 +1,6 @@
 // components/MultiStepForm/Step2.jsx
 import React from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 
 const Step2 = ({ formData, updateFormData, nextStep, prevStep }) => {
   const bagOptions = [1, 2, 3, 4, 5];
