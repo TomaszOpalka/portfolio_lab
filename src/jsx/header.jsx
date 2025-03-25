@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { supabase } from "./Client.jsx";
 import Layout from "./Layout.jsx";
-import "../scss/Layout.scss";
+// import "../scss/Header.scss";
 
 function Header() {
   const [user, setUser] = useState(null);
