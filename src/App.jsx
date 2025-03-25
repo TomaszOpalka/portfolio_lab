@@ -9,7 +9,7 @@ import Login from './jsx/Login.jsx';
 import CreateAcc from './jsx/CreateAcc.jsx';
 import Layout from './jsx/Layout.jsx';
 import './jsx/Client.jsx';
-import OddajRzeczy from './jsx/afterlogin/OddajRzeczy.jsx';
+import OddajRzeczy from './jsx/afterlogin/oddajrzeczy.jsx';
 
 
 function App() {
