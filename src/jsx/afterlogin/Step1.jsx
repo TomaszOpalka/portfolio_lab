@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 
 const Step1 = ({ formData, updateFormData, nextStep }) => {
   const categories = [
