@@ -1,8 +1,7 @@
 import React from 'react';
 import Header from '../Header.jsx';
 import Contact from '../Contact.jsx';
-import LoginHero from '../afterlogin/LoginHero.jsx';
-import FormHeader from './FormHeader.jsx';
+import LoginHero from './LoginHero.jsx';
 import MultiStepForm from './MultiStepForm.jsx';
 
 
