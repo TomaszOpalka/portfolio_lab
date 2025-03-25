@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../Header.jsx';
 import Contact from '../Contact.jsx';
 import LoginHero from '../afterlogin/LoginHero.jsx';
+import FormHeader from './FormHeader.jsx';
+import MultiStepForm from './MultiStepForm.jsx';
 
 
 function OddajRzeczy() {
@@ -10,7 +12,7 @@ function OddajRzeczy() {
         <div className="oddaj-rzeczy-hero"></div>
         <Header/>
         <LoginHero/>
-      
+        <MultiStepForm/>
         <Contact/>
     </div>
   );
