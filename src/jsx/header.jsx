@@ -7,33 +7,33 @@ import { supabase } from "./Client.jsx";
 
 
 function Header() {
-  // const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   async function checkSession() {
-  //     // Pobieramy aktualną sesję użytkownika
-  //     const {
-  //       data: { session },
-  //     } = await supabase.auth.getSession();
-  //     setUser(session?.user ?? null); // Ustawiamy użytkownika, jeśli sesja istnieje
-  //   }
+  useEffect(() => {
+    async function checkSession() {
+      // Pobieramy aktualną sesję użytkownika
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      setUser(session?.user ?? null); // Ustawiamy użytkownika, jeśli sesja istnieje
+    }
 
-  //   checkSession(); // Sprawdzamy sesję przy montowaniu komponentu
+    checkSession(); // Sprawdzamy sesję przy montowaniu komponentu
 
-  //   // Nasłuchujemy zmian w stanie logowania
-  //   const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
-  //     setUser(session?.user ?? null); // Aktualizacja stanu użytkownika
-  //   });
+    // Nasłuchujemy zmian w stanie logowania
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null); // Aktualizacja stanu użytkownika
+    });
 
-  //   return () => {
-  //     listener?.subscription?.unsubscribe(); // Czyszczenie subskrypcji
-  //   };
-  // }, []);
+    return () => {
+      listener?.subscription?.unsubscribe(); // Czyszczenie subskrypcji
+    };
+  }, []);
 
-  // const handleLogout = async () => {
-  //   await supabase.auth.signOut(); // Wylogowanie użytkownika
-  //   setUser(null); // Resetowanie stanu użytkownika
-  // };
+  const handleLogout = async () => {
+    await supabase.auth.signOut(); // Wylogowanie użytkownika
+    setUser(null); // Resetowanie stanu użytkownika
+  };
 
   return (
     <div className="header">

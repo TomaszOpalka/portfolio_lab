@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../../jsx/Header.jsx";
 import Contact from "../Contact.jsx";
 import LoginHero from "./LoginHero.jsx";

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 // import Header from "../Header.jsx";
 import Header from "../jsx/Header.jsx";
 import { supabase } from './Client.jsx';
@@ -29,11 +29,15 @@ function CreateAcc() {
     }
 
     try{
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
-    })
-    alert('sprawdź swój email w celu weryfikacji')
+    });
+    if (error) {
+      setErrorMessage(error.message);
+    } else {
+      alert('sprawdź swój email w celu weryfikacji');
+    }
   }catch (error){
     alert(error)
   }
