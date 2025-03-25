@@ -5,6 +5,7 @@ import { supabase } from "./Client.jsx";
 // import Layout from "./Layout.jsx";
 // import "../scss/Header.scss";
 
+
 function Header() {
   const [user, setUser] = useState(null);
 
