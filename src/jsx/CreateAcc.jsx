@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Header from './Header.jsx';
+// import Header from "./Header.jsx";
+import Header from "../Header.jsx";
 import { supabase } from './Client.jsx';
 import { Link } from 'react-router-dom';
 
