@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 
 const cities = [
   'Warszawa', 'Kraków', 'Wrocław', 'Poznań', 'Gdańsk', 

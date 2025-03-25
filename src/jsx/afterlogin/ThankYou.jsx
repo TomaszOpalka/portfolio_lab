@@ -1,6 +1,6 @@
 // components/MultiStepForm/ThankYou.jsx
 import React from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 import '../../assets/Decoration.svg';
 
 const ThankYou = () => {

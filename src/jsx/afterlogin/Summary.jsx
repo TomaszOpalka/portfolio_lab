@@ -1,6 +1,6 @@
 // components/MultiStepForm/Summary.jsx
 import React from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 import Icon1 from '../../assets/Icon-1.svg';
 import Icon4 from "../../assets/Icon-4.svg";
 

@@ -1,6 +1,6 @@
 // components/MultiStepForm/Step4.jsx
 import React from 'react';
-import '../../scss/_multiStepForm.scss';
+import '../../scss/_multistepform.scss';
 
 const Step4 = ({ 
   formData, 
