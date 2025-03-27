@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { supabase } from "./Client";// Updated import path
+import { supabase } from "./Client"; // Ensure this path is correct
 import Layout from "./Layout.jsx";
 
 
