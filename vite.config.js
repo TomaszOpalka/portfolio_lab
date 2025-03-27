@@ -10,8 +10,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@jsx": path.resolve(__dirname, "./src/jsx"),
+      "@components": path.resolve(__dirname, "./src/components") // Recommended over @jsx
     },
-    extensions: ['.js', '.jsx', '.json'] // Dodane rozszerzenia
+    extensions: ['.js', '.jsx', '.ts', '.tsx'] // Add all needed extensions
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true
   }
 });
