@@ -1,4 +1,5 @@
 import "react";
+import Header from "./Header.jsx";
 import Header from "../jsx/Header.jsx";
 import Hero from "./Hero.jsx";
 import Statistic from "./Statistic.jsx";
