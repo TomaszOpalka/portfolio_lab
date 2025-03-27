@@ -18,4 +18,9 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
   },
+  server: {
+    mimeTypes: {
+      "application/javascript": ["js"],
+    },
+  },
 });
