@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { supabase } from "./Client"; // Ensure this path is correct
+import { supabase } from "../jsx/Client"; // Adjusted import path if needed
 import Layout from "./Layout.jsx";
-
 
 function Header() {
   const [user, setUser] = useState(null);

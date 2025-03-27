@@ -10,12 +10,12 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@components": path.resolve(__dirname, "./src/components") // Recommended over @jsx
+      "@components": path.resolve(__dirname, "./src/components"), // Recommended over @jsx
     },
-    extensions: ['.js', '.jsx', '.ts', '.tsx'] // Add all needed extensions
+    extensions: [".js", ".jsx"], // Ensure .jsx is included
   },
   build: {
-    outDir: 'dist',
-    emptyOutDir: true
-  }
+    outDir: "dist",
+    emptyOutDir: true,
+  },
 });
