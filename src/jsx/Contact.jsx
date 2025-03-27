@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import BackgroundContact from '@/assets/Background-Contact-Form.jpg';
+import Decoration from '@/assets/Decoration.svg';
+import Facebook from "@/assets/Facebook.svg";
+import Instagram from "@/assets/Instagram.svg";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -71,7 +75,7 @@ function Contact() {
       <div className="contact-img">
         <img
           className="contact-background"
-          src="src/assets/Background-Contact-Form.jpg"
+          src={BackgroundContact}
           alt="Background"
         />
       </div>
@@ -79,7 +83,7 @@ function Contact() {
         <h1>Skontaktuj się z nami</h1>
         <img
           className="contact-decoration"
-          src="src/assets/Decoration.svg"
+          src={Decoration}
           alt="Decoration"
         />
 
@@ -135,8 +139,8 @@ function Contact() {
 
       <div className="copyright-media">
         <p>Copyright by Coders Lab</p>
-        <img src="src/assets/Facebook.svg" alt="Facebook" />
-        <img src="src/assets/Instagram.svg" alt="Instagram" />
+        <img src={Facebook} alt="Facebook" />
+        <img src={Instagram} alt="Instagram" />
       </div>
     </div>
   );

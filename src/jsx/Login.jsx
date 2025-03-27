@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '/src/jsx/Header.jsx';
 import { supabase } from './Client.jsx';
 import { Link, useNavigate } from 'react-router-dom';
+import Decoration from '@/assets/Decoration.svg';
 
 
 function Login() {
@@ -46,7 +47,7 @@ function Login() {
       <Header />
       <div id="login" className="login-createacc">
         <h1>Formularz logowania</h1>
-        <img className="login-createacc-decoration" src="src/assets/Decoration.svg" alt="Decoration" />
+        <img className="login-createacc-decoration" src={Decoration} alt="Decoration" />
         <div className="grey-login">
           <form onSubmit={handleSubmit}>
             <label>

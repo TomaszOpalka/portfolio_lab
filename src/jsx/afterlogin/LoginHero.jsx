@@ -1,26 +1,22 @@
 import React from "react";
 import "../../scss/_loginhero.scss";
 import "../../scss/_hero.scss";
+import FormHero from "@/assets/Form-Hero-Image.jpg";
+import Decoration from "@/assets/Decoration.svg";
 
 function LoginHero() {
   return (
     <>
       <div className="home loginhero">
         <div className="hero-img">
-          <img
-            className="loginhero-img"
-            src="src/assets/Form-Hero-Image.jpg"
-          ></img>
+          <img className="loginhero-img" src={FormHero}></img>
         </div>
         <div className="hero">
           <h1 className="hero-h1">
             Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM{" "}
           </h1>
           <div className="">
-            <img
-              className="loginhero-decoration"
-              src="src\assets\Decoration.svg"
-            ></img>
+            <img className="loginhero-decoration" src={Decoration}></img>
           </div>
           <h2 className="h2-loginhero">Wystarczą 4 proste kroki:</h2>
           <div className="steps">

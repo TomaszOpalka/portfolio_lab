@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Decoration from '@/assets/Decoration.svg';
 
 function WhoWeHelp() {
   const [activeTab, setActiveTab] = useState('fundacje');
@@ -87,7 +88,7 @@ function WhoWeHelp() {
     <div className="wwh-container" id="whowehelp">
       <div className="wwh-text">
         <h1>Komu pomagamy?</h1>
-        <img className="wwh-decoration" src="src\assets\Decoration.svg" alt="Decoration"></img>
+        <img className="wwh-decoration" src={Decoration} alt="Decoration"></img>
         <div className="wwh-btns">
           <button className={`btn wwh-btn ${activeTab === 'fundacje' ? 'active' : ''}`} onClick={() => handleTabChange('fundacje')}>
             Fundacjom

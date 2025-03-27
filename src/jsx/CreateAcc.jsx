@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Header from "../jsx/Header.jsx";
 import { supabase } from './Client.jsx';
 import { Link } from 'react-router-dom';
+import Decoration from '@/assets/Decoration.svg';
 
 function CreateAcc() {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ function CreateAcc() {
       <Header />
       <div id="createacc" className="login-createacc">
         <h1>Formularz rejestracji</h1>
-        <img className="login-createacc-decoration" src="src\assets\Decoration.svg" alt="Decoration" />
+        <img className="login-createacc-decoration" src={Decoration} alt="Decoration" />
         <div className="grey-login">
           <form onSubmit={handleSubmit}>
             <label>
