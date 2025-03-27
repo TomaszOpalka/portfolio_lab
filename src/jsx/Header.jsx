@@ -1,10 +1,9 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { supabase } from "./Client.jsx";
+import { supabase } from "./Client";// Updated import path
 // import Layout from "./Layout.jsx";
 // import "../scss/Header.scss";
-
 
 function Header() {
   const [user, setUser] = useState(null);
@@ -21,9 +20,11 @@ function Header() {
     checkSession(); // Sprawdzamy sesję przy montowaniu komponentu
 
     // Nasłuchujemy zmian w stanie logowania
-    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
-      setUser(session?.user ?? null); // Aktualizacja stanu użytkownika
-    });
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null); // Aktualizacja stanu użytkownika
+      }
+    );
 
     return () => {
       listener?.subscription?.unsubscribe(); // Czyszczenie subskrypcji
@@ -76,7 +77,7 @@ function Header() {
           <ScrollLink className="header-li" to="contact">
             Kontakt
           </ScrollLink>
-        </ul> 
+        </ul>
       </div>
     </div>
   );
