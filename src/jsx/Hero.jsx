@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import HomeHeroImage from '../assets/Home-Hero-Image.jpg';
+import Decoration from '../assets/Decoration.svg';
 
 
 
