@@ -9,14 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@jsx": path.resolve(__dirname, "./src/jsx"),
-    },
-  },
-  build: {
-    rollupOptions: {
-      external: [
-        "/src/jsx/Header.jsx", // Dodaj problematyczny plik
-      ],
+      // Upewnij się, że folder "./src/jsx" istnieje!
+      "@jsx": path.resolve(__dirname, "./src/jsx"), 
     },
   },
 });
