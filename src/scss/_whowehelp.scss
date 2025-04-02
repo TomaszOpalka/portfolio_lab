@@ -1,68 +1,126 @@
-.wwh-container{
+.wwh-container {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    padding-bottom: 120px;
+    padding-bottom: 7.5rem; // 120px → 7.5rem (przy standardowym 16px)
+
+    @media (max-width: 768px) {
+        padding-bottom: 5rem;
+    }
 }
-.wwh-text{
+
+.wwh-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
-    h1{
-        margin: 60px 0 20px 0;
-    }
-    p{
-        text-align: center;
-        line-height: 1.5;
-        margin: 0 0 70px 0;
+    text-align: center;
+    padding: 0 1rem;
+
+    h1 {
+        margin: 3.75rem 0 1.25rem 0; // 60px → 3.75rem, 20px → 1.25rem
+
+        @media (max-width: 768px) {
+            margin: 2rem 0 1rem 0;
+            font-size: 1.8rem;
+        }
     }
 
+    p {
+        text-align: center;
+        line-height: 1.5;
+        margin: 0 0 4.375rem 0; // 70px → 4.375rem
+        max-width: 800px;
+        padding: 0 1.5rem;
+
+        @media (max-width: 768px) {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+    }
 }
-.wwh-btns{
+
+.wwh-btns {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 20px;
-    margin: 50px;
+    left: 1.25rem; // 20px → 1.25rem
+    margin: 3.125rem 0; // 50px → 3.125rem
+
+    @media (max-width: 768px) {
+        left: 0;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 }
 
-.wwh-list{
-    margin: 0 16.22% ;
+.wwh-list {
+    margin: 0 16.22%;
     font-family: $font-merriweather;
     font-weight: 300;
+
+    @media (max-width: 1024px) {
+        margin: 0 8%;
+    }
+
+    @media (max-width: 768px) {
+        margin: 0 1.5rem;
+    }
 }
-.wwh-li-right{
+
+.wwh-li-right {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    bottom: 30px;
+    bottom: 1.875rem; // 30px → 1.875rem
+
+    @media (max-width: 768px) {
+        justify-content: flex-start;
+        bottom: 0;
+        margin-top: 1.5rem;
+    }
 }
-.wwh-li{
-    p:first-of-type{
+
+.wwh-li {
+    p:first-of-type {
         font-style: italic;
-    } 
-}    
-.pagination-wwh{
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.pagination-wwh {
     display: flex;
     justify-content: center;
-   
-    
-    .wwh-btn{
+    flex-wrap: wrap; // Przy małych ekranach przyciski mogą przejść do nowej linii
+
+    .wwh-btn {
         background-color: #fff;
         border-radius: none;
         border: 1px solid transparent;
-        height: 50px;
-        width: 38px;
-        font-size: 15px;
-        margin: 10px;
-        
-        &.active{
+        height: 3.125rem; // 50px → 3.125rem
+        width: 2.375rem; // 38px → 2.375rem
+        font-size: 0.9375rem; // 15px → 0.9375rem
+        margin: 0.625rem; // 10px → 0.625rem
+        cursor: pointer;
+        transition: border 0.2s ease;
+
+        &.active {
             border: 1px solid black;
         }
+
         &:hover {
             border: 1px solid black;
-          }
+        }
+
+        @media (max-width: 480px) {
+            height: 2.5rem;
+            width: 2rem;
+            font-size: 0.875rem;
+            margin: 0.5rem;
+        }
     }
 }

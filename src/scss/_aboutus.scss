@@ -1,36 +1,101 @@
-.aboutus{
+.aboutus {
     display: flex;
-    height: 935px;
+    height: auto; // Zmiana ze stałej wysokości na auto
+    min-height: 58.4375rem; // 935px → 58.4375rem (zachowuje proporcje)
+    flex-direction: row; // Domyślna wartość, ale dla przejrzystości
 
+    @media (max-width: 1024px) {
+        min-height: 45rem;
+    }
 
+    @media (max-width: 768px) {
+        flex-direction: column; // Na mobile kolumna (zdjęcie nad/poł tekstem)
+        min-height: auto;
+    }
 
-    &-text{
+    &-text {
         width: 50%;
         position: relative;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+        box-sizing: border-box;
 
-      
-       
-       p{
-        text-align: center;
-        line-height: 1.75;
-        font-size: 30px;
-       }
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 1.5rem;
+            order: 2; // Tekst pod zdjęciem na mobile
+        }
 
+        p {
+            text-align: center;
+            line-height: 1.75;
+            font-size: 1.875rem; // 30px → 1.875rem
+            max-width: 90%; // Zapobiega zbyt szerokim liniom
+
+            @media (max-width: 1200px) {
+                font-size: 1.5rem;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1.25rem;
+                line-height: 1.6;
+            }
+        }
     }
-    &-img{
+
+    &-img {
         width: 50%;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            order: 2; // Zdjęcie nad tekstem na mobile
+            min-height: 25rem; // Minimalna wysokość zdjęcia na mobile
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     }
 }
-.aboutus-signature{
+
+.aboutus-signature {
     position: relative;
-    left: 200px;
-    top: 30px;
+    left: 12.5rem; // 200px → 12.5rem
+    top: 1.875rem; // 30px → 1.875rem
+    width: 15rem; // Stała szerokość dla kontroli
+    max-width: 100%;
+
+    @media (max-width: 1200px) {
+        left: 8rem;
+        width: 12rem;
+    }
+
+    @media (max-width: 768px) {
+        left: 50%;
+        transform: translateX(-50%); // Centrowanie poziome
+        top: 1rem;
+        width: 10rem;
+        margin-top: 1rem;
+    }
 }
-.aboutus-decoration{
-    margin: 20px;
+
+.aboutus-decoration {
+    margin: 1.25rem; // 20px → 1.25rem
+    width: auto;
+    height: auto;
+    max-width: 100%;
+
+    @media (max-width: 768px) {
+        margin: 1rem;
+        max-width: 80%; // Zapobiega zbyt dużym dekoracjom na mobile
+    }
 }

@@ -1,31 +1,87 @@
-.steps-white{
+.steps-white {
     background-color: #fff;
-    padding: 80px;
+    padding: 5rem; // 80px → 5rem
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px  ;
+    gap: 1.25rem; // 20px → 1.25rem
     color: $color-dark;
+
+    @media (max-width: 1024px) {
+        padding: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 2rem 1.5rem;
+    }
 }
-.steps-grey{
-    height: 325px;
+
+.steps-grey {
+    height: auto; // Zmiana ze stałej wysokości
+    min-height: 20.3125rem; // 325px → 20.3125rem
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #F0F1F1;
-    gap: 120px;
+    gap: 7.5rem; // 120px → 7.5rem
+    padding: 2rem;
+    flex-wrap: wrap; // Zawijanie elementów
+
+    @media (max-width: 1200px) {
+        gap: 5rem;
+    }
+
+    @media (max-width: 992px) {
+        gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+        // Wersja 2x2
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        place-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        // Wersja 1 kolumna (zawijanie)
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
-.steps-hr{
-    width: 55px;
+
+.steps-hr {
+    width: 3.4375rem; // 55px → 3.4375rem
+    border: none;
+    border-top: 1px solid $color-dark;
+    margin: 0.5rem 0;
+
+    @media (max-width: 768px) {
+        width: 2.5rem;
+    }
 }
-.steps-4{
+
+.steps-4 {
     text-align: center;
-    width: auto;
-    width: 160px;
-    height: 220px;
+    width: 10rem; // 160px → 10rem
+    height: auto; // Zmiana ze stałej wysokości
+    min-height: 13.75rem; // 220px → 13.75rem
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 0.3125rem; // 5px → 0.3125rem
+    padding: 1rem;
+    box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        max-width: 8rem;
+        min-height: 11rem;
+    }
+
+    @media (max-width: 480px) {
+        max-width: 100%;
+    }
 }

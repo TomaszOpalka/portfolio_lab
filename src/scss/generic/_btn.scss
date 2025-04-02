@@ -1,22 +1,55 @@
-.btn{
-    width: 310px;
-    height: 120px;
+.btn {
+    width: 19.375rem; // 310px → 19.375rem
+    height: 7.5rem; // 120px → 7.5rem
     text-align: center;
-    font: normal 300 36px/45px 'Open Sans', sans-serif;
-    letter-spacing: 0px;
+    font: normal 300 2.25rem/1.25 'Open Sans', sans-serif; // 36px → 2.25rem, 45px → line-height 1.25
+    letter-spacing: 0;
     color: #3C3C3C;
-    opacity: 1;
     border: 0.75px solid transparent;
-    background-color: #FFF;
     background: none;
     outline: none;
     white-space: pre-line;
-    margin-right: 40px;
-    
-    
+    margin-right: 2.5rem; // 40px → 2.5rem
+    padding: 0 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 
-    &:hover{
+    &:hover {
         border-color: $color-dark;
     }
-}
 
+    // Responsywność
+    @media (max-width: 1200px) {
+        width: 16rem;
+        height: 6rem;
+        font-size: 1.8rem;
+        margin-right: 2rem;
+    }
+
+    @media (max-width: 992px) {
+        width: 14rem;
+        height: 5rem;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        width: 12rem;
+        height: 4rem;
+        font-size: 1.25rem;
+        margin-right: 1rem;
+    }
+
+    @media (max-width: 576px) {
+        width: 100%;
+        max-width: 18rem;
+        height: 3.5rem;
+        font-size: 1.1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

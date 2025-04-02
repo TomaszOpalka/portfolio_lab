@@ -1,42 +1,49 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { supabase } from "../jsx/Client"; // Adjusted import path if needed
+import { supabase } from "../jsx/Client";
 import Layout from "./Layout.jsx";
 
 function Header() {
   const [user, setUser] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     async function checkSession() {
-      // Pobieramy aktualną sesję użytkownika
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      setUser(session?.user ?? null); // Ustawiamy użytkownika, jeśli sesja istnieje
+      const { data: { session } } = await supabase.auth.getSession();
+      setUser(session?.user ?? null);
     }
 
-    checkSession(); // Sprawdzamy sesję przy montowaniu komponentu
+    checkSession();
 
-    // Nasłuchujemy zmian w stanie logowania
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setUser(session?.user ?? null); // Aktualizacja stanu użytkownika
-      }
-    );
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) setIsMenuOpen(false);
+    };
+
+    window.addEventListener('resize', handleResize);
     return () => {
-      listener?.subscription?.unsubscribe(); // Czyszczenie subskrypcji
+      listener?.subscription?.unsubscribe();
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const handleLogout = async () => {
-    await supabase.auth.signOut(); // Wylogowanie użytkownika
-    setUser(null); // Resetowanie stanu użytkownika
+    await supabase.auth.signOut();
+    setUser(null);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="header">
+    <header className="header">
       <div className="header-topgroup">
         {user ? (
           <>
@@ -59,26 +66,33 @@ function Header() {
           </>
         )}
       </div>
-      <div className="header-nav">
+
+      <button className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav className={`header-nav ${isMenuOpen ? 'active' : ''}`}>
         <ul className="header-ul">
-          <Link to="/">
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <li className="header-li">Start</li>
           </Link>
-          <ScrollLink className="header-li" to="steps">
+          <ScrollLink className="header-li" to="steps" onClick={() => setIsMenuOpen(false)}>
             O co chodzi?
           </ScrollLink>
-          <ScrollLink className="header-li" to="aboutus">
+          <ScrollLink className="header-li" to="aboutus" onClick={() => setIsMenuOpen(false)}>
             O nas
           </ScrollLink>
-          <ScrollLink className="header-li" to="whowehelp">
+          <ScrollLink className="header-li" to="whowehelp" onClick={() => setIsMenuOpen(false)}>
             Fundacja i organizacje
           </ScrollLink>
-          <ScrollLink className="header-li" to="contact">
+          <ScrollLink className="header-li" to="contact" onClick={() => setIsMenuOpen(false)}>
             Kontakt
           </ScrollLink>
         </ul>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }
 
