@@ -67,6 +67,9 @@
     &:hover {
         border: 1px solid #0f0f0f;
           }
+          @media screen and (max-width: 588px) {
+            left: 200px;
+          }
 }
 .btn-login {
     font: normal normal 300 18px/32px "Open Sans";
@@ -85,4 +88,7 @@
     &:hover {
         border: 1px solid #0f0f0f;
    }
+   @media screen and (max-width: 588px) {
+    left: -90px;
+  }
 }       
